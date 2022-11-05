@@ -1,19 +1,27 @@
-import Typicode from "@durgadas/sdk-demo";
+import Inara from "@inara/sdk";
 
-const client: Typicode = new Typicode({
-  apiKey: "sdfd",
+const client = new Inara({
+  privateKey:
+    "eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjoxLCJleHAiOjE2Njc2NjE2MzEsImlhdCI6MTY2NzY1ODAzMX0.-WWHucVPOnFxtBE8RZlSfPuaImk_tO3ahtF4wniy7a8",
 });
 
-// client.getPosts().then((p) => {
-//   console.log(p);
+client.Interseptors({ status: "verifie" });
+// client.getBooks({ limit: 1 }).then((res) => console.log(res))
+
+// const res = client.createBookandGetBalance({
+//   title: "karime book",
+//   active: true,
+//   author_cut: "2",
+//   book_image: "https://google.com",
+//   epub: "0o3131",
+//   isbn: "122331",
+//   price: "20",
+//   keywords: "sdk, api",
+//   published: true,
+//   reference_number: "23313",
+//   slug: "sidn",
+//   status: "verified",
+//   summary: "hello this is my book",
 // });
 
-client
-  .createPost({
-    title: "test",
-    body: "test",
-    userId: 1,
-  })
-  .then((p) => {
-    console.log(`Created new post with id ${p.id}`);
-  });
+// console.log(res);

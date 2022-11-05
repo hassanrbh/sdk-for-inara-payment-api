@@ -1,10 +1,11 @@
 import { Base } from "./base";
-import { Posts } from "./posts";
+import { Books } from "./books";
+import { Order } from "./orders";
 import { applyMixins } from "./utils";
 
-class Typicode extends Base {}
-interface Typicode extends Posts {}
+class Inara extends Base {}
+interface Inara extends Books, Order {}
 
-applyMixins(Typicode, [Posts]);
+applyMixins(Inara, [Books, Order]);
 
-export default Typicode;
+export default Inara;

@@ -1,25 +1,26 @@
 import fetch from "isomorphic-unfetch";
 
 type Config = {
-  apiKey: string;
+  privateKey: string;
   baseUrl?: string;
 };
 
 export abstract class Base {
-  private apiKey: string;
+  private privateKey: string;
   private baseUrl: string;
 
   constructor(config: Config) {
-    this.apiKey = config.apiKey;
-    this.baseUrl = config.baseUrl || "https://jsonplaceholder.typicode.com";
+    this.privateKey = config.privateKey;
+    this.baseUrl = config.baseUrl || "http://localhost:3001";
   }
 
-  protected request<T>(endpoint: string, options?: RequestInit): Promise<T> {
+  protected rq<T>(endpoint: string, options?: RequestInit): Promise<T> {
     const url = `${this.baseUrl}${endpoint}`;
     const headers = {
       "Content-Type": "application/json",
-      "api-key": this.apiKey,
+      Authorization: this.privateKey,
     };
+
     const config = {
       ...options,
       headers,
@@ -29,7 +30,7 @@ export abstract class Base {
       if (response.ok) {
         return response.json();
       }
-      throw new Error(response.statusText);
+      return console.log(response.statusText);
     });
   }
 }

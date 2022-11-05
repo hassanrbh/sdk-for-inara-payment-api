@@ -1,5 +1,5 @@
 {
-  "name": "@durgadas/sdk-demo",
+  "name": "@inara/sdk",
   "version": "1.0.0",
   "description": "",
   "main": "dist/index.js",
@@ -15,7 +15,7 @@
     "dev": "microbundle --watch --tsconfig tsconfig.json --no-sourcemap"
   },
   "keywords": [],
-  "author": "durgadas",
+  "author": "hassan",
   "license": "MIT",
   "devDependencies": {
     "microbundle": "0.15.0"
